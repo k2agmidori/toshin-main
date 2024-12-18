@@ -1,0 +1,335 @@
+@use "mixin" as *;
+/*
+ * 実力講師陣CMS
+ */
+
+.ad-layout-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* PCでは5列 */
+  gap: 16px;
+  /* アイテム間の隙間 */
+}
+
+@include sp {
+
+  /* タブレット (例: 横幅1024px以下) */
+  .ad-layout-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3列 */
+  }
+}
+
+@include mobile {
+
+  /* スマートフォン (例: 横幅768px以下) */
+  .ad-layout-grid {
+    grid-template-columns: repeat(1, 1fr);
+    /* 1列 */
+    gap: 0;
+  }
+}
+
+.ad-layout-grid__item {
+  // background-color: #f9f9f9; /* アイテム背景色 */
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-decoration: none;
+  color: rgb(51, 51, 51);
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #f4fcfb;
+    border-color: #8fd9d1;
+
+    .teacher-set__button {
+      transition: 0.3s;
+      background-color: lighten(#06b9a3, 3%);
+    }
+  }
+
+  @include mobile {
+    padding: 8px;
+  }
+}
+
+.teacher-set {
+  display: flex;
+  flex-direction: column;
+  height: 100%; // コンテナ全体の高さを確保
+
+  &__figure,
+  &__details,
+  &__description {
+    margin-bottom: 8px; // 要素間の余白を統一
+    word-wrap: break-word;
+    /* レガシーなプロパティ */
+    word-break: break-word;
+    /* 推奨されるプロパティ */
+  }
+
+  &__details {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    font-size: 15px;
+    align-items: center;
+  }
+
+  &__subject {
+    font-size: 12px;
+    color: #fff;
+    padding: calc((24px - 12px) / 2) 5px;
+    /* 上下の余白を計算 */
+    line-height: 12px;
+    /* フォントサイズと一致させる */
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  &__name {
+    font-weight: 700;
+  }
+
+  &__label {
+    // font-size: .8em;
+  }
+
+  &__description {
+    font-size: 12px;
+  }
+
+  &__button {
+    margin-top: auto; // ボタンを下揃え
+    padding: 4px 4px;
+    background-color: #06b9a3;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex; // テキストとアイコンを横並びに
+    align-items: center; // 垂直方向の中央揃え
+    justify-content: center; // 水平方向の中央揃え
+    gap: 8px; // テキストとアイコンの間に余白
+
+    &:hover {
+      background-color: lighten(#06b9a3, 3%);
+    }
+
+    i {
+      font-size: 1em; // アイコンのサイズ調整
+    }
+  }
+
+  &__figure {
+    position: relative; // ホバーエフェクト用に必要
+    overflow: hidden; // 画像がズームアップしても外にはみ出さないようにする
+    aspect-ratio: 4 / 4;
+    /* 正方形を維持 */
+    border-radius: 4px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // transition: transform 0.3s; // 画像のズーム効果を追加
+  }
+}
+
+@include mobile {
+  .teacher-set {
+    display: grid;
+    gap: 0px 0.8rem;
+    grid-template-columns: 1fr 1.6fr;
+
+    &__figure {
+      grid-row: 1 / 4;
+      grid-column: 1 / 2;
+    }
+
+    &__figure {
+      margin-bottom: 0;
+    }
+
+    &__details,
+    &__description {
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.container {
+  height: 25px;
+  /* divの高さ */
+  display: flex;
+  /* フレックスボックスを使用 */
+  align-items: center;
+  /* 縦中央揃え */
+}
+
+.text {
+  font-size: 12px;
+  /* フォントサイズ */
+  line-height: 1;
+  /* 行の高さをフォントサイズに合わせる */
+  padding-top: calc((25px - 12px) / 2);
+  /* 上の余白 */
+  padding-bottom: calc((25px - 12px) / 2);
+  /* 下の余白 */
+}
+
+// 色の変更
+.teacher-set__subject.--english {
+  background: #fac03d;
+}
+
+.teacher-set__subject.--math {
+  background: #5eb7e8;
+}
+
+.teacher-set__subject.--japanese {
+  background: #f5b2b2;
+}
+
+.teacher-set__subject.--science {
+  background: #cfa7cd;
+}
+
+.teacher-set__subject.--social-studies {
+  background: #89c997;
+}
+
+.teacher-set__subject.--it {
+  background: #7f73d1;
+}
+
+.subject-box {
+  padding: 2rem 0;
+  background-image: url(https://matsuo.testsite-dx.com/wp-content/plugins/snow-monkey-blocks/dist/blocks/section/img/dots.png);
+
+  p {
+    text-align: center;
+  }
+
+  margin: 3.5rem 0 2rem;
+}
+
+.subject-title {
+  text-align: center;
+  border-bottom: 2px solid;
+  margin: 0 auto;
+  display: table;
+  margin-bottom: 8px;
+}
+
+.t_english {
+  color: #fac03d;
+}
+
+.t_math {
+  color: #5eb7e8;
+}
+
+.t_japanese {
+  color: #f5b2b2;
+}
+
+.t_science {
+  color: #cfa7cd;
+}
+
+.t_trk {
+  color: #89c997;
+}
+
+.t_info {
+  color: #7f73d1;
+}
+
+// modal
+/* 共通スタイル */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10001;
+  max-width: 90%;
+  width: 800px;
+  /* デスクトップ向けの最大幅 */
+}
+
+.popup iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.popup.active,
+.popup-overlay.active {
+  display: block;
+}
+
+/* モバイル対応 */
+@media screen and (max-width: 768px) {
+  .popup {
+    width: 90%;
+    /* スマホ画面では幅を90%に */
+    max-width: none;
+    /* 最大幅を無効にする */
+  }
+}
+
+/* ポップアップの閉じるボタン */
+.close-popup {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: 0.5s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+}
+
+.page-id-13573 h2.wp-block-heading {
+  font-size: 2.2rem !important;
+  font-weight: normal;
+  color: #009380 !important;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  width: 100%;
+}
+
+@include mobile {
+  .page-id-13573 {
+
+    .vk_button.vk_button-align-left,
+    .editor-styles-wrapper .vk_button.vk_button-align-left {
+      width: 48%;
+    }
+  }
+}

@@ -1,0 +1,254 @@
+/*
+* 実績ページ
+*/
+@use "mixin" as *;
+
+// 合格実績
+// 現役東大生の
+.gj-tx1 {
+    font-size: 1.6rem;
+}
+
+// ２．８－
+.gj-tx2 {
+    font-size: 1.6rem;
+}
+
+// SP文字中央
+.gj-tx-box {
+    @include mq(md) {
+        align-items: center !important;
+    }
+}
+
+// SP縦並び
+.lg-column {
+    @include mq(lg) {
+        flex-direction: column;
+    }
+}
+
+.kyutei {
+    @include mq(md) {
+        flex-wrap: wrap !important;
+        .kyutei-tx,
+        .kyutei-num {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+}
+
+// 昨対数値
+.sakutai-num span {
+    vertical-align: super;
+}
+
+// スペースの確保
+.gj-sakutai {
+    justify-content: space-evenly !important;
+}
+
+@include mq(md) {
+    .gj-wrap {
+        flex-wrap: wrap !important;
+        gap: 0 !important;
+    }
+    .gj-sakutai {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+}
+
+@include mq(sm) {
+    .gj-wrap {
+        flex-direction: column !important;
+    }
+}
+// 合格者の声　続きを読むボタン
+.gj-next-btn button {
+    border: solid 1px #009380;
+    background: transparent;
+    color: #009380;
+    padding: 0.1rem 1.8rem;
+    &:hover {
+        background: #009380;
+        color: #fff;
+    }
+
+    @include mq(md) {
+        &:active {
+            background: #009380;
+            color: #fff;
+        }
+    }
+}
+
+.gj-tx-nowrap {
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+// 実績テーブル数値　SP1列に
+@include mq(lg) {
+    #achievement {
+        figure td {
+            width: auto !important;
+            display: table-cell !important;
+        }
+        .wp-block-columns .gj-number,
+        .lg-column.gj-number {
+            padding: 0 0px !important;
+            gap: 0 4% !important;
+            // SP時の線の重複
+            // SP時も改行しない(慶応大)
+            flex-wrap: nowrap !important;
+            td {
+                font-size: 0.83rem;
+                // padding: 5px 0 5px 5px !important;
+            }
+        }
+
+        tbody tr:last-of-type {
+            td {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+// 大学カテゴリボタン
+.gj-fixed-btn {
+    display: none;
+}
+@include mq(md) {
+    .gj-fixed-btn.sp-active {
+        transition: 0.3s;
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        // footerに合わせる
+        // bottom: 70.1875px;
+        // headerに合わせる
+        top: 85.6562px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 0.7rem;
+        z-index: 10000;
+        line-height: 3.5;
+        background: #fff;
+        padding-top: 10px;
+        margin-top: -10px;
+        a {
+            text-decoration: none;
+            color: #fff;
+            width: 100%;
+            width: 20%;
+            margin-right: 2px;
+            background: #009380;
+        }
+    }
+
+    #gj-btn1 {
+    }
+    #gj-btn2 {
+    }
+    #gj-btn3 {
+    }
+    #gj-btn4 {
+    }
+
+    #gj-btn6 {
+        background: #c1a263;
+        margin-right: 0;
+    }
+}
+
+@include mq(sm) {
+    .gj-a-100 {
+        width: 100%;
+    }
+    .gj-a-100 a {
+        width: 100%;
+    }
+}
+
+@include mq(lg){
+.other-shidai {
+    gap: 0 !important;
+}}
+
+// SPテキストセンター
+@include mq(md) {
+    .tx-center {
+        text-align: center !important;
+    }
+}
+
+// 桜
+.sakura img {
+    max-width: 100% !important;
+}
+
+#main_content h2.wp-block-heading.tx18 {
+    font-size: 1.8rem !important;
+}
+
+@include mq(md) {
+     .gj-yumeishidai-num {
+        padding: 0!important;
+        gap: 0 3% !important;
+    flex-wrap: nowrap !important;
+
+        // SP時の線の重複
+        // SP時も改行しない(慶応大)
+        td {
+            font-size: 0.83rem;
+            padding: 5px 0 5px 5px !important;
+        }
+    }
+}
+
+@include mq(lg){
+    .gj-yumeishidai-num{
+        gap: 0 3% !important;
+    }
+}
+
+.sp-only{
+    display:none;
+}
+
+
+
+@include mq(md) {
+    // 東大数値
+    .todai-heading,.tx-center {
+        text-align: center!important;
+    }
+    // 東大リスト
+    .gj-list{
+        width: fit-content;
+        margin: auto;
+    }
+    .sp-only{
+        display: block;
+    }
+    // 昨対センター
+    .fx_center{
+        justify-content: center!important;
+    }
+    .fit-c-box{
+        width: fit-content;
+        margin: auto;
+    }
+}
+
+
+
+.gj-number tr td ,
+.other-shidai tr td{
+    vertical-align: sub;
+}
+

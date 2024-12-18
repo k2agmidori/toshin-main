@@ -1,0 +1,923 @@
+@use "mixin" as *;
+/*
+* Layout
+*/
+// 細々としたレイアウト
+
+/* 問合せボタンアイコンフォントのズレ */
+.svg-inline--fa {
+    margin-right: 3px;
+}
+
+/* トップページ 写真の順番変更 */
+@media screen and (max-width: 782px) {
+    .block_flex_order {
+        -webkit-box-ordinal-group: 3;
+        -webkit-order: 2;
+        -ms-flex-order: 2;
+        order: 2;
+        /* background: #ff0000; */
+    }
+}
+
+/* vk blockに負けるので*/
+.btn_margin {
+    margin-top: 10px !important;
+}
+
+/* 校舎案内ページ WPVR */
+.school_thumbnail_btn {
+    padding: 0;
+    border: none;
+}
+
+.school_thumbnail {
+    -webkit-box-pack: center !important;
+    -webkit-justify-content: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+
+.smb-spider-slider > .spider__dots[data-thumbnails="true"] .spider__dot {
+    width: 29.5%;
+}
+
+.school_thumbnail_btn img {
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+/* 講師紹介のボタン */
+/* sp */
+a.vk_button_link.btn.has-background.has-vk-color-primary-background-color.btn-sm.btn-block {
+    padding: 0.2rem 0;
+}
+
+/* GoogleMap 高さ設定 */
+.map iframe {
+    // height: 450px;
+    width: 100%;
+}
+
+.map-shadow {
+    padding: 0.5em;
+    border: solid 1px #eee;
+    box-shadow: 0px 0px 10px 0px #0093801a;
+}
+
+@media only screen and (max-width: 768px) {
+    .map iframe {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 767px) {
+    [data-btns="r-l"] .l-header__body {
+        grid-template-columns: var(--ark-searchW) calc(12% - var(--ark-searchW)) 76% calc(12% - var(--ark-drawerW)) var(
+                --ark-drawerW
+            ) !important;
+    }
+    .l-header__center .has-image + .c-tagline {
+        font-size: 5.1vw;
+        font-weight: bold;
+        color: #009380;
+        display: contents;
+    }
+}
+@media (max-width: 1200px) {
+    .l-headerUnder .c-gnav > .menu-item > a {
+        padding: 16px 12px !important;
+    }
+    .c-gnav .sub-menu {
+        margin-left: -80px !important;
+    }
+}
+/* 上書き */
+
+[data-btns="rr-rl"] .l-header__body {
+    grid-template-columns: 0% 50% auto var(--ark-searchW) var(--ark-drawerW);
+}
+
+// 1000px以下だと表示崩れする件
+// tab
+@media (max-width: 1000px) {
+    [data-btns="rr-rl"] .l-header__body {
+        grid-template-areas: "center right search menu";
+        grid-template-columns: 50% auto var(--ark-searchW) var(--ark-drawerW);
+    }
+}
+
+// sp
+@media (max-width: 768px) {
+    [data-btns="rr-rl"] .l-header__body {
+        grid-template-areas: "center search menu";
+        // grid-template-columns: 75% var(--ark-searchW) var(--ark-drawerW);
+        grid-template-columns: 75% 12.5% 12.5%;
+    }
+}
+
+/* フローティングボタン背景色削除 */
+[data-drawer="opened"] [id^="bfb_content_"].bfb_view_sp {
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+/* tab */
+.tab-group {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.tab {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding: 5px;
+    list-style: none;
+    border: solid 1px #ccc;
+    text-align: center;
+    cursor: pointer;
+}
+
+.panel-group {
+    height: 50vh;
+    border: solid 1px #ccc;
+    border-top: none;
+    background: #eee;
+}
+
+.panel {
+    display: none;
+}
+
+.tab.is-active {
+    background: #009380;
+    color: #fff;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.panel.is-show {
+    display: block;
+}
+
+/*----- 校舎案内ページ テンプレート作成 -----*/
+/* リセット */
+.p_0,
+.smb-tabs[data-orientation="horizontal"] > .smb-tabs__tabs .smb-tabs__tab {
+    padding: 0 !important;
+}
+
+.b_n {
+    border: none !important;
+}
+
+.wp-block-algori-360-image-block-algori-360-image {
+    margin-bottom: 1rem;
+}
+
+/* --サムネイル画像--- */
+/* 共通 */
+.smb-tabs__tab-wrapper img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* SP用 */
+@media (max-width: 768px) {
+    .smb-tabs__tab-wrapper img {
+        height: 5rem;
+    }
+    .smb-tabs__tab-wrapper {
+        margin-right: 3%;
+        width: 31.3333333333%;
+    }
+}
+/* PC用 */
+@media (min-width: 768px) {
+    .smb-tabs__tab-wrapper img {
+        height: 100px;
+    }
+    .smb-tabs__tab-wrapper {
+        margin-right: 5%;
+        width: 30%;
+    }
+}
+/* --サムネイル画像End--- */
+.smb-tabs__tab-wrapper:nth-child(3n) {
+    margin-right: 0;
+}
+
+/* dl.school_thumbnail dd{
+    text-align: left;
+} */
+.smb-tabs__tabs {
+    margin-top: 1rem;
+}
+
+dl.school_thumbnail dd::before {
+    content: "■";
+    color: #009380;
+    font-size: 0.9rem;
+}
+
+/* SP */
+@media (max-width: 768px) {
+    .wpvr-cardboard {
+        height: 300px;
+    }
+}
+/* PC */
+@media (min-width: 768px) {
+    .wpvr-cardboard {
+        height: 400px;
+    }
+}
+.school_content section {
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.school_content h2 {
+    margin: 2rem 0;
+}
+
+/* map */
+section.photo_360,
+section.map {
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.school_content iframe {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.school-container {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* SP */
+@media (max-width: 768px) {
+    .sp-only {
+        display: block;
+    }
+}
+/* PC */
+@media (min-width: 768px) {
+    .sp-only {
+        display: none;
+    }
+}
+.map_address {
+    margin-bottom: 1rem;
+}
+
+/* ---------------
+実力講師start
+--------------- */
+// 講師box背景色
+.teacher_flex {
+    &:hover {
+        background: #f2fafa;
+        cursor: pointer;
+        &active {
+            border-color: #09a598;
+            background: #f2fafa;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .teacher_padding {
+        padding: 0 30px;
+    }
+    .teacher_flex {
+        padding: 0.5rem;
+    }
+}
+.teacher_txbox {
+    padding: 0;
+    .btn {
+        border-radius: 50px;
+    }
+    // SP時のつめ
+    // @include mq(md) {
+    //     margin-top: rem;
+    // }
+}
+
+.t_btn span {
+    padding: 1px 2px;
+    color: white;
+    margin-left: 0;
+    white-space: nowrap;
+}
+
+.t_toshin span {
+    background: #009380;
+}
+
+.t_english span {
+    background: #fac03d;
+}
+
+.t_math span {
+    background: #5eb7e8;
+}
+
+.t_japanese span {
+    background: #f5b2b2;
+}
+
+.t_science span {
+    background: #cfa7cd;
+}
+
+.t_trk span {
+    background: #89c997;
+}
+
+.t_info span {
+    background: #7f73d1;
+}
+.tch_ml-0 {
+    margin-left: 0 !important;
+}
+
+.teacher_btn a {
+    border-radius: 100px;
+}
+
+/* ズームアップ */
+.hover-zoom,
+.hover-zoom > a {
+    overflow: hidden;
+    display: block;
+    border-radius: 9999px;
+}
+
+.hover-zoom > img,
+.hover-zoom > a > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-transition: all, 0.5s;
+    transition: all, 0.5s;
+}
+
+.hover-zoom:hover > img,
+.hover-zoom:hover > a > img {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.btn_mv {
+    margin: 0 !important;
+}
+
+/* ---------------
+実力講師 end
+--------------- */
+
+/* ---------------
+特長ページ start
+--------------- */
+@media (max-width: 781px) {
+    #system-teacher.system-teacher {
+        -webkit-flex-basis: initial !important;
+        -ms-flex-preferred-size: initial !important;
+        flex-basis: initial !important;
+    }
+    #basis_initial {
+        -webkit-flex-basis: initial !important;
+        -ms-flex-preferred-size: initial !important;
+        flex-basis: initial !important;
+    }
+    .system_teacher_box {
+        /* flex-direction: column-reverse; */
+    }
+}
+
+/* 特徴ページ(id4610)の写真位置調整 */
+/* PC */
+@media (min-width: 1000px) {
+    .page-id-4610 .u-obf-cover {
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: 50% 40%;
+        object-position: 50% 40%;
+    }
+    .page-id-3024 .u-obf-cover,
+    .page-id-6920 .u-obf-cover,
+    .page-id-13573 .u-obf-cover {
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: 50% 30%;
+        object-position: 50% 30%;
+    }
+}
+/* SP */
+@media (max-width: 1000px) {
+    .page-id-3024 .u-obf-cover,
+    .page-id-6920 .u-obf-cover,
+    .page-id-13573 .u-obf-cover {
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: 20% 50%;
+        object-position: 20% 50%;
+    }
+}
+
+#feature01 .smb-read-more-box__button {
+    border: solid 1px #009380;
+    background: transparent;
+    color: #009380;
+    padding: 0.1rem 1.8rem;
+    @media only screen and (min-width: 768px) {
+        &:hover {
+            background: #009380;
+            color: #fff;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        &:active {
+            background: #009380;
+            color: #fff;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #feature h2 {
+        text-align: center;
+    }
+    #feature01 .p-b0 {
+        padding-bottom: 0 !important;
+    }
+    .pagelink_btn {
+        width: 100%;
+    }
+}
+
+.label_feature {
+    background-color: #ff8430;
+    display: inline-block;
+    padding: 2px 16px;
+    color: #fff;
+    border-radius: 30px;
+}
+
+.btn_movie a {
+    padding: 0.3em 1.5rem !important;
+}
+
+.pagelink_btn > div > a {
+    font-size: 0.8rem !important;
+    padding: 0.4em 1.2rem !important;
+}
+
+// メニューボタン配色
+.c-gnav__li > .c-gnav__a {
+    &:hover {
+        color: #7e7e7e;
+    }
+    &:active {
+        color: #7e7e7e;
+    }
+}
+
+.privacy-inner:where(thead) td,
+:where(thead) th {
+    background: #fff;
+}
+
+// アンカーリンクボタン
+@include mq(md) {
+    .teacher_btn_box a {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ---------------
+特長ページ end
+--------------- */
+// フッターのposition変更
+footer.l-footer {
+    position: static;
+    z-index: auto;
+}
+
+// ここからGoogleMap
+#areagooglemap {
+    height: 480px;
+    border-radius: 15px;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 400px;
+        border-radius: 5px;
+    }
+}
+
+.map_box {
+    // width: 200px;
+    // background: orange;
+    text-align: start;
+    p.kosha_name {
+        // font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana,
+        // Helvetica, Arial, sans-serif;
+        font-size: 1rem;
+        color: #009380;
+        font-weight: bold;
+    }
+    p.map_address {
+        margin-bottom: 10px;
+        margin-top: 5px;
+        @media screen and (max-width: 768px) {
+            font-size: 0.8rem;
+        }
+    }
+    a.map_link_btn {
+        // text-decoration: none;
+        font-weight: bold;
+        display: block;
+        &:link,
+        &:active,
+        &:hover,
+        &:focus {
+            outline: none !important;
+        }
+    }
+}
+
+a.map_link_btn {
+    position: relative;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    width: 100%;
+    min-width: 200px;
+    margin: auto;
+    padding: 0.3rem 0;
+    font-weight: bold;
+    border: 2px solid #009380;
+    color: #009380;
+    transition: 0.5s;
+    background: #fff;
+    border-radius: 50px;
+
+    // &:before {
+    //     /*白い丸 */
+    //     display: block;
+    //     content: "";
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 19px;
+    //     width: 1rem;
+    //     height: 1rem;
+    //     margin-top: -8px;
+    //     border-radius: 50%;
+    //     background: #fff;
+    // }
+    // &:after {
+    //     /*「after要素」で三角 */
+    //     display: block;
+    //     content: "";
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 25px;
+    //     width: 0;
+    //     height: 0;
+    //     margin-top: -5px;
+    //     border: 5px solid transparent; /*top right bottom を透明化 */
+    //     border-left: 5px solid #009380;
+    // }
+    // &:hover:after {
+    //     /*「after要素」のマウスオーバー（カラーを合わせる） */
+    //     border-left: 5px solid #009380;
+    // }
+}
+a.map_link_btn:hover {
+    color: #fff;
+    background: #009380;
+}
+
+// メニューボタン
+.l-header__drawerBtn,
+.l-header__searchBtn {
+    margin: 0 auto;
+}
+
+.sl1_maintitle span {
+    display: block;
+    margin-top: 18px;
+}
+
+// 投稿ページh2
+#main_content h2.wp-block-heading.tokoh2 {
+    font-size: 1.6rem !important;
+}
+
+/* 20241009 */
+/* MV change */
+.xo-slider-template-default .swiper-slide img {
+    height: calc(100dvh - 200px) !important;
+    object-position: top;
+    @media (max-width: 450px) {
+        object-position: 62% 50%;
+    }
+}
+
+.slide-content-subtitle {
+    max-width: 640px;
+}
+
+// 縦長SP
+@media (max-width: 450px) and (max-height: 950px) {
+    .xo-slider-template-default .swiper-slide img {
+        height: calc(100dvh - 300px) !important;
+    }
+}
+
+// 通常SP
+@media (max-width: 450px) and (max-height: 700px) {
+    .xo-slider-template-default .swiper-slide img {
+        height: calc(100dvh - 200px) !important;
+    }
+}
+
+.p-topArea__title.c-pageTitle {
+    text-shadow: 1px 1px 2px #aaaaaa;
+    text-align: left;
+}
+
+@media (min-width: 1000px) {
+    .page-id-4610 .u-obf-cover {
+        object-position: 50% 20%;
+    }
+}
+
+.c-pageTitle__main {
+    font-size: clamp(2.1rem, 1.633rem + 1.87vw, 2.8rem);
+    position: relative;
+    letter-spacing: -0.03em;
+    padding-bottom: 8px;
+    line-height: 0.83;
+}
+
+// 1023
+.xo-slider-template-default .slide-content {
+    padding: 20px 0;
+}
+
+/*
+*Dセット
+*/
+.num-box {
+    display: flex;
+    padding-bottom: 10px;
+    gap: 10px;
+    align-items: stretch;
+    @include sp {
+        gap: 5px;
+    }
+}
+
+.num-box__left {
+    padding: 10px 0 10px 1rem;
+    width: 100%;
+    border: 1px solid $pale-toshin;
+    @include sp {
+        padding: 5px 0 5px 1rem;
+    }
+}
+.num-box__right {
+    text-transform: capitalize;
+    background: $gd-toshin;
+    color: #fff;
+    width: 104px;
+    flex: 0 0 auto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    position: relative;
+    @include sp {
+        width: auto;
+        min-width: 70px;
+    }
+    p {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+    }
+    // border-right: 2px solid $pale-toshin;
+    // padding-right: 10px;
+    @include sp {
+        // font-size: 1rem;
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+    .num-box__num {
+        color: #fff;
+        display: block;
+        font-size: 3rem;
+        line-height: 1;
+        font-weight: 600;
+        @include sp {
+            font-size: 2rem;
+        }
+    }
+}
+
+// 映像を活用～
+.num-box__left p {
+    // font-weight: 700;
+    font-size: 20px;
+    @include sp {
+        font-weight: normal;
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+}
+
+// 学習メリット
+span.num-box__left-bottom {
+    color: $pale-toshin;
+    display: block;
+    font-size: 26px;
+    @include sp {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+}
+
+// 固定ページヘッダー（アイキャッチ）
+.p-topArea__title.c-pageTitle {
+    text-shadow: 1px 1px 2px #aaaaaa;
+    @include pc {
+        text-align: left;
+    }
+}
+
+.c-pageTitle__main {
+    position: relative;
+    letter-spacing: -0.03em;
+    padding-bottom: 8px;
+    line-height: 0.83;
+    font-weight: 700;
+}
+
+.c-pageTitle__sub {
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 400;
+    position: relative;
+    vertical-align: middle;
+}
+
+.l-content__top.p-topArea {
+    // min-height: 200px;
+    h1 {
+        font-size: clamp(2.1rem, 1.633rem + 1.87vw, 2.8rem);
+    }
+    @include mobile {
+        // min-height: 115px;
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+// 固定ページフィルター色
+.p-topArea.c-filterLayer::before {
+    // -webkit-filter: brightness(0) invert(1);
+    // filter: brightness(0) invert(1);
+}
+
+// PCサブメニュー
+.c-gnav .sub-menu,
+.c-gnav__depth1:before {
+    background: rgb(33 37 41 / 80%);
+    backdrop-filter: blur(3px);
+}
+
+// MAP部分
+@include sp {
+    .sp-txal_center {
+        text-align: center !important;
+    }
+    .sp-leftcenter {
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+.txal-left {
+    text-align: left;
+}
+
+// 校舎ページ見出し
+#main_content .heading02 {
+    position: relative;
+    font-size: clamp(2rem, 1.25rem + 1.6vw, 2.25rem) !important;
+    text-align: center;
+    border-bottom: 5px solid #dddddd;
+    color: #000 !important;
+}
+
+#main_content .heading02::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 5px;
+    background-color: #00938033;
+}
+
+// 投稿ページ見出し
+.bg-gd {
+    background: linear-gradient(-135deg, rgb(155, 213, 205), rgb(0, 147, 128));
+    color: #fff !important;
+}
+
+// 黄色ボタン
+@include mobile {
+    .vk_button.vk_button-align-wide,
+    .editor-styles-wrapper .vk_button.vk_button-align-wide {
+        max-width: 100% !important;
+    }
+}
+
+.event-btn {
+    border: solid 2px #fff;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 100px;
+    .vk_button_link {
+        background: linear-gradient(-135deg, #f9db5c, #f88b0b);
+        padding: 0.6em 1rem !important;
+        border-radius: inherit;
+    }
+}
+
+// 投稿の鉛筆見出し
+.postid-2551 #main_content .bg-gd.gdfont,
+.postid-1484 #main_content .bg-gd.gdfont {
+    color: #fff !important;
+    padding: 1rem 1.3rem 1.3rem 1.3rem;
+    font-size: 2.3rem !important;
+}
+
+#main_content .bg-gd.gdfont span {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 3px;
+    position: relative;
+}
+
+// スライダー
+.smb-spider-slider {
+    overflow: visible;
+}
+
+span.fnt3 {
+    color: #fff;
+    background: #5accb7;
+    padding: 3px 5px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 30px;
+}
+
+.ftw500 {
+    font-weight: 500;
+}
+
+[id^="bfb_content_"].bfb_view_sp a.bfb_btn {
+    background: #06b9a3 !important;
+}
+
+.l-header,
+.l-headerUnder[data-fix] {
+    z-index: 9999;
+}

@@ -1,0 +1,1481 @@
+@use "mixin" as *;
+// ココナラ作成
+/*
+* default
+*/
+/* 文字選択 */
+::-moz-selection {
+    color: #fff;
+    background-color: #009380;
+}
+::selection {
+    color: #fff;
+    background-color: #009380;
+}
+
+/* ------------ フォント ------------ */
+body {
+    font-family: "Montserrat", "Noto Sans JP", sans-serif !important;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+}
+
+#main_content h2,
+.school_content h2 {
+    font-size: 2.2rem !important;
+    font-weight: normal !important;
+    color: #009380 !important;
+}
+
+#main_content h2 strong {
+    color: #009380;
+}
+
+#main_content h2.wp-block-heading {
+    font-size: 2rem !important;
+    font-weight: normal !important;
+    color: #009380 !important;
+}
+
+#main_content h3 {
+    font-size: 1.4rem !important;
+    font-weight: normal !important;
+    // color: #009380;
+}
+
+/* --- hタグデザイン --- */
+/*h2 {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+h2:before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: #0E9987;
+    border-radius: 2px;
+}
+body.home h2 {
+    margin-bottom: 20px;
+}
+body.home h2:before {
+    display: none;
+}
+*/
+@media (max-width: 680px) {
+    h2 {
+        font-size: 2rem !important;
+    }
+    #main_content h2 {
+        font-size: 1.8rem !important;
+    }
+}
+/* ---------- スライダー ----------*/
+
+.xo-slider-template-default .slide-content-subtitle {
+    margin-bottom: 2rem;
+}
+
+// pc
+@media (min-width: 1280px) {
+    .xo-slider-template-default .slide-content {
+        width: 1280px !important;
+        padding: 20px clamp(0rem, -21.818rem + 27.27vw, 3.75rem) !important;
+    }
+    .xo-slider-template-default .slide-content-title span:last-child{
+        font-size: .85em;
+        padding-left: 3px;
+    }
+    
+}
+
+.l-header__center .has-image + .c-tagline {
+    text-align: left;
+}
+.xo-slider-template-default .slide-content {
+    // left: unset !important;
+    margin: auto !important;
+    top: 50% !important;
+    left: 50% !important;
+    height: auto !important;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    @media (max-width: 450px){
+        top: 65%!important;
+    }
+}
+.xo-slider-template-default .slide-content-title {
+    // font-size: 3.6vw !important;
+    font-size: clamp(3rem, 2.333rem + 1.39vw, 4rem) !important;
+    font-weight: 700 !important;
+    line-height: 125%;
+    @include mq(md){
+        line-height: 1.46em;
+    }
+    color: #009380;
+    margin-bottom: 1rem;
+    text-shadow:
+        1px 1px 0px #fff,
+        -1px -1px 0px #fff,
+        -1px 1px 0px #fff,
+        1px -1px 0px #fff,
+        1px 0px 0px #fff,
+        -1px 0px 0px #fff,
+        0px 1px 0px #fff,
+        0px -1px 0px #fff;
+}
+
+
+.xo-slider-template-default .slide-content-subtitle {
+    font-size: 16px !important;
+    font-weight: 400;
+    width: 100%;
+    color: #000;
+    margin-bottom: 2rem !important;
+    text-shadow:
+        0.5px 0.5px 0px #fff,
+        -0.5px -0.5px 0px #fff,
+        -0.5px 0.5px 0px #fff,
+        0.5px -0.5px 0px #fff,
+        0.5px 0px 0px #fff,
+        -0.5px 0px 0px #fff,
+        0px 0.5px 0px #fff,
+        0px -0.5px 0px #fff;
+}
+
+@media (max-width: 1000px) {
+    .xo-slider-template-default .slide-content-title {
+        font-size: clamp(1.6rem, -1.31rem + 6.9vw, 3rem) !important;
+    }
+    .xo-slider-template-default .slide-content-subtitle {
+        font-size: clamp(0.813rem, -0.688rem + 6.67vw, 0.875rem) !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+
+
+.sl1 {
+    padding-top: 10%;
+    overflow: hidden;
+    color: #009380;
+    width: 1280px;
+    margin: auto;
+}
+
+.sl1_subtitle {
+    display: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #cfb160;
+}
+
+.sl1_maintitle {
+    font-size: 3.6vw;
+    font-weight: 700;
+    color: #009380;
+    margin-bottom: 15px;
+    text-shadow:
+        1px 1px 0px #fff,
+        -1px -1px 0px #fff,
+        -1px 1px 0px #fff,
+        1px -1px 0px #fff,
+        1px 0px 0px #fff,
+        -1px 0px 0px #fff,
+        0px 1px 0px #fff,
+        0px -1px 0px #fff;
+}
+
+.sl1_content {
+    margin-top: 20px;
+    font-size: 1vw;
+    color: #222;
+    width: 620px;
+    font-size: 16px;
+    line-height: 140%;
+    text-shadow:
+        1px 1px 0px #fff,
+        -1px -1px 0px #fff,
+        -1px 1px 0px #fff,
+        1px -1px 0px #fff,
+        1px 0px 0px #fff,
+        -1px 0px 0px #fff,
+        0px 1px 0px #fff,
+        0px -1px 0px #fff;
+    margin: 0;
+}
+
+@media (max-width: 680px) {
+    .sl1_content {
+        width: 98%;
+        margin: auto;
+    }
+    .sl1_maintitle {
+        font-size: 1.8rem;
+    }
+    .sl1 {
+        padding-top: 28%;
+        width: 100%;
+    }
+    .smb-box--p-l {
+        padding: 0px;
+    }
+}
+
+/* ---------- ヘッダー ----------*/
+.l-wrapper {
+    min-height: auto;
+}
+/*.c-pageTitle__main {
+    font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', '游明朝', 'Yu Mincho', '游明朝体', 'YuMincho', 'ＭＳ Ｐ明朝', 'MS PMincho', serif;
+}*/
+
+@media (min-width: 1650px) {
+    .l-header__center .c-tagline {
+        font-size: 1.8vw;
+    }
+}
+@media screen and (min-width: 1201px) and (max-width: 1650px) {
+    .l-header__center .c-tagline {
+        font-size: 2.2vw;
+    }
+}
+@media (max-width: 1200px) {
+    .l-header__center .c-tagline {
+        font-size: 1.8vw;
+    }
+}
+@media (min-width: 1000px) {
+    [data-btns="r-l"] .l-header__body {
+        grid-template-columns: var(--ark-searchW) 0 70% calc(30% - var(--ark-drawerW)) 0;
+    }
+    [data-logo="center"] .l-header__center {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .l-headerUnder[data-fix] {
+        border-top: 1px solid #ccc;
+        border-bottom: 2px solid #009380;
+    }
+    .l-header__logo {
+        z-index: 100;
+        padding-right: 10px;
+    }
+    .l-header__center .c-tagline {
+        position: relative;
+        z-index: 1000;
+        /*display: contents;*/
+        /*margin-top: 0px !important;*/
+        color: #017364;
+        font-weight: 600;
+    }
+    .head_c1 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: 450px;
+    }
+    .head_c1 a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        background-color: #eb7d9c;
+        /* padding: 8px 20px; */
+        padding: 8px 18px;
+        border-radius: 5px;
+    }
+    .head_c1 a:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: #ff3e75;
+    }
+    .h_left1,
+    .h_right1 {
+        width: 49%;
+        text-align: center;
+        color: #fff;
+    }
+    .h_left1 {
+        margin-right: 1.5%;
+    }
+    .head_c1 {
+        color: #0566a9;
+    }
+    // .l-header__center {
+    //     grid-area: left !important;
+    // }
+    .l-header__right {
+        // width: 380px;
+    }
+    .head_contact {
+        font-size: 2rem;
+        color: #0566a9;
+        line-height: 120%;
+    }
+    .head_contact a {
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .svg-inline--fa.fa-square-phone {
+        font-size: 1.6rem;
+        padding-right: 5px;
+    }
+}
+@media (max-width: 1000px) {
+    .l-header__center .has-image + .c-tagline {
+        font-size: 3vw;
+        font-weight: bold;
+        color: #009380;
+        display: contents;
+    }
+}
+@media (max-width: 1200px) {
+    .l-headerUnder .c-gnav > .menu-item > a {
+        padding: 16px 12px !important;
+    }
+    .c-gnav .sub-menu {
+        margin-left: -80px !important;
+    }
+}
+/*#header .l-container {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+}
+*/
+/* ---------- ヘッダー ----------*/
+@media (min-width: 600px) {
+    .p-breadcrumb__text {
+        font-size: 14px;
+    }
+}
+/* ---------- トップ ----------*/
+.topsec2 .c-container,
+.topsec2 .c-fluid-container {
+    margin-right: 0px !important;
+}
+
+.x1_7 {
+    background-color: #f02020;
+    color: #fff;
+    font-size: 0.5rem;
+    padding: 3px;
+}
+
+.smb-section__background-text__text {
+    z-index: 1000;
+}
+
+@media (max-width: 767px) {
+    .smb-section__background-text__text {
+        font-size: 2.8rem !important;
+    }
+}
+/* --- お知らせ --- */
+ul.new-posts li {
+    margin: 0;
+    padding: 0.2em 0;
+    border-bottom: 1px solid #eee;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "游ゴシック", "Yu Gothic",
+        "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+ul.new-posts .post-date {
+    margin-right: 15px;
+}
+
+.new_l1 {
+    background-color: red;
+    font-size: 0.7rem;
+    padding: 2px 1px 3px 6px;
+    text-align: center;
+    color: #fff;
+    margin-right: 5px;
+}
+
+/* ---------- 東進衛星予備校の特長 ---------- */
+/* ----- ベース ----- */
+.bg_base1 {
+    line-height: 100%;
+    margin-bottom: 10px;
+    width: 90px;
+    text-align: center;
+}
+
+/* -- 英語 */
+.bg_eng {
+    padding: 10px 20px 5px;
+    background-color: #ffff99;
+}
+
+/* -- 数学 */
+.bg_math {
+    padding: 10px 20px 5px;
+    background-color: hsl(204, 100%, 91%);
+}
+
+/* -- 国語 */
+.bg_nl {
+    padding: 10px 20px 5px;
+    background-color: #fde9ed;
+}
+
+/* -- 物理 */
+.bg_phy {
+    padding: 10px 20px 5px;
+    background-color: #e6ddff;
+}
+
+/* -- 社会 */
+.bg_soc {
+    padding: 10px 20px 5px;
+    background-color: #e0ffff;
+}
+
+/* 科学 */
+.bg_sci {
+    padding: 10px 20px 5px;
+    background-color: #dcffcc;
+}
+
+.eset-sub1 h3 {
+    margin-top: 30px !important;
+}
+
+.fs1 {
+    /*font-size: 0.8rem;*/
+    font-size: 1rem;
+}
+
+.teacher_title {
+    font-size: 1.2rem;
+}
+
+/* ---------- 合格実績 ----------*/
+body.page-id-15 p {
+    margin-top: 5px;
+}
+
+.jisseki1 {
+    font-size: 1.5rem;
+    color: #009380;
+}
+
+ul.is-style-vk-arrow-mark,
+ul.is-style-vk-triangle-mark,
+ul.is-style-vk-check-mark,
+ul.is-style-vk-check-circle-mark,
+ul.is-style-vk-check-square-mark,
+ul.is-style-vk-handpoint-mark,
+ul.is-style-vk-pencil-mark,
+ul.is-style-vk-smile-mark,
+ul.is-style-vk-frown-mark,
+ul.is-style-vk-numbered-circle-mark,
+ul.is-style-vk-numbered-square-mark,
+ol.is-style-vk-arrow-mark,
+ol.is-style-vk-triangle-mark,
+ol.is-style-vk-check-mark,
+ol.is-style-vk-check-circle-mark,
+ol.is-style-vk-check-square-mark,
+ol.is-style-vk-handpoint-mark,
+ol.is-style-vk-pencil-mark,
+ol.is-style-vk-smile-mark,
+ol.is-style-vk-frown-mark,
+ol.is-style-vk-numbered-circle-mark,
+ol.is-style-vk-numbered-square-mark {
+    margin-top: 0px;
+}
+
+/* カラムボックスのスペースを無くす */
+.colbox11.wp-block-columns {
+    --wp-column-gap: 0rem !important;
+}
+
+.voice_box1 ul.is-style-vk-triangle-mark li::before,
+.voice_box1 ol.is-style-vk-triangle-mark li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: -1.5em;
+}
+
+.voice_box1 ul.is-style-vk-triangle-mark li.ihito::before {
+    content: "\f4ff";
+}
+
+.voice_box1 ul.is-style-vk-triangle-mark li.iarrow::before {
+    content: "\f061";
+}
+
+.voice_box1 ul.is-style-vk-triangle-mark li.imail::before {
+    content: "\f0e0";
+}
+
+.voice_box1 ul.is-style-vk-triangle-mark li.ipen::before {
+    content: "\f044";
+}
+
+.voice_box1 .voice_pr1 {
+    margin-bottom: 5px !important;
+}
+
+.voice_pr1 li:last-child {
+    margin: 0px !important;
+}
+
+@media (max-width: 767px) {
+    .voice_box1 .wp-block-image img {
+        max-width: 60%;
+    }
+    .colbox11 .smb-price-menu > .smb-price-menu__item {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .colbox11 .smb-price-menu__item__title {
+        width: 30%;
+    }
+    .colbox11 .smb-price-menu__item__price {
+        width: 69%;
+        text-align: right;
+    }
+    .colbox11 .smb-price-menu {
+        border-top: 0px solid var(--smb-price-menu--border-color) !important;
+        margin-top: -20px !important;
+    }
+}
+/* ---------- 講師紹介 ----------*/
+.aboutbox1 p {
+    margin: 5px 0px !important;
+}
+
+.aboutbox1 .vk_borderBox .vk_borderBox_title_container .vk_borderBox_title {
+    font-size: 1.3rem !important;
+}
+
+p.about_p1 {
+    background-color: #f92931;
+    padding: 3px 5px;
+    color: #fff;
+    display: block;
+    width: 80px;
+    text-align: center;
+}
+
+p.about_p2 {
+    font-size: 1.3rem;
+}
+
+p.about_p3 {
+    font-size: 0.9rem;
+}
+
+.vk_borderBox.is-style-vk_borderBox-style-solid-kado-tit-inner,
+.vk_borderBox.is-style-vk_borderBox-style-solid-kado-tit-onborder,
+.vk_borderBox.is-style-vk_borderBox-style-solid-kado-iconFeature {
+    border-width: 1px !important;
+}
+
+/*.vk_borderBox.is-style-vk_borderBox-style-solid-kado-tit-onborder>.vk_borderBox_title_container {
+    border: 1px solid #009380;
+    width: 200px;
+    text-align: center;
+}*/
+@media (min-width: 1024px) {
+    .c-row[data-lg-columns="2"] > .c-row__col {
+        margin-top: 20px;
+    }
+}
+/* ---------- 入学の流れ・学費 ----------*/
+.colbox1 td {
+    padding: 0px !important;
+    vertical-align: baseline;
+    line-height: 140%;
+}
+
+.colbox1 h4 {
+    background-color: #e87f88 !important;
+    color: #fff !important;
+    font-size: 0.8rem !important;
+    padding: 3px !important;
+    font-weight: normal !important;
+}
+
+.colbox1 h5 {
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.colbox1.vk_borderBox .vk_borderBox_body {
+    padding: 0.5em 0.8em 0.5em;
+}
+
+.colbox1 .vk_borderBox_title_container i {
+    display: none;
+}
+
+.colbox1 .vk_borderBox .vk_borderBox_title_container .vk_borderBox_title {
+    display: inline-block;
+}
+
+.colbox1 .vk_borderBox_title_container {
+    padding-top: 0.6rem !important;
+}
+
+.colbox1 .smb-box__background {
+    min-height: 160px;
+}
+
+.colbox1 h5::after {
+    content: "必須";
+    position: absolute;
+    right: 0;
+    background-color: #ed7f84;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 3px;
+}
+
+.colbox1 strong {
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+.flow_poi1 {
+    padding-top: 30px;
+}
+
+.flow_poi2 {
+    padding-top: 20px;
+}
+
+.flow_poi3 {
+    padding-top: 10px;
+}
+
+.flow_poi4 {
+    padding-top: 30px;
+}
+
+.flow_col1 {
+    vertical-align: middle;
+}
+
+.flow_col2 {
+    font-size: 1.2rem !important;
+}
+
+.flow_col2 strong {
+    font-size: 1.5rem !important;
+}
+
+.flow_col2 .smb-price-menu__item {
+    padding: 5px 0;
+}
+
+.flow_p1 {
+    background-color: #ffff4d;
+    padding: 10px;
+    color: #274a41 !important;
+    max-width: 100px;
+    font-size: 1.6rem !important;
+    text-align: center;
+}
+
+.flow_p1 {
+    background-color: #ffff4d;
+    padding: 10px;
+    color: #274a41 !important;
+}
+
+.flow_p2 {
+    font-size: 1.8rem;
+}
+
+.flow_p2 strong {
+    color: #ffff4d;
+    padding: 10px;
+    font-size: 4rem !important;
+}
+
+.flow_p3 {
+    font-size: 1.3rem;
+    line-height: 100% !important;
+}
+
+.flow_p3 strong {
+    color: #ffff4d;
+    padding: 10px;
+    font-size: 2rem !important;
+}
+
+.flow_p3 em {
+    background-color: #ffff4d;
+    font-size: 0.9rem;
+    padding: 3px;
+    font-style: normal;
+    color: #274a41 !important;
+}
+
+.stepbox1 .smb-step__item__title > .smb-step__item__number {
+    z-index: 1000;
+}
+
+.stepbox1 .smb-step__item {
+    position: relative;
+    z-index: 1000;
+}
+
+.stepbox1 .smb-step__item::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: -3%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 120px;
+    height: 1px;
+    background-color: #009380;
+}
+
+.stepbox1 .wp-block-snow-monkey-blocks-box {
+    position: relative;
+    margin-left: 80px;
+    margin-top: -40px;
+    z-index: 1000;
+}
+
+.vk_heading {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.vk_heading_subtext {
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
+}
+
+.gakuhibox1 {
+    margin-bottom: 5px;
+}
+
+.gakuhibox1 .smb-information__item__label,
+.gakuhibox1 .smb-information__item__body {
+    padding: 10px !important;
+}
+
+@media (max-width: 767px) {
+    .stepbox1 .smb-step__item::after {
+        top: 0%;
+        left: -9%;
+        width: 60px;
+    }
+    .stepbox1 .wp-block-snow-monkey-blocks-box {
+        position: relative;
+        margin-left: 0px;
+    }
+}
+/* ---------- コース紹介 ----------*/
+.coursebox1 .wp-block-media-text__content {
+    margin-top: 0px !important;
+}
+
+/* ---------- 校舎紹介 ----------*/
+.koushi1 .wp-element-caption {
+    font-size: 1.2rem;
+    margin-bottom: 0px !important;
+}
+
+.koushi1_p1 {
+    font-size: 0.8rem;
+    margin-top: 5px !important;
+}
+
+/* ---------- 合格実績 ----------*/
+body.page-id-15 {
+    background-attachment: fixed;
+}
+
+body.page-id-15 .u-obf-cover {
+    display: none;
+}
+
+body.page-id-15 .p-topArea {
+    min-height: 2vh !important;
+}
+
+body.page-id-15 .c-filterLayer::before {
+    content: normal !important;
+}
+
+body.page-id-17 .smb-section__lede {
+    font-size: 1.2rem !important;
+}
+
+body.page-id-17 .smb-section__lede-wrapper {
+    margin-top: 0px !important;
+}
+
+.c-filterLayer.-filter-dot::after {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    opacity: 0;
+    background-image: none !important;
+}
+
+.jisseki_sec1.smb-section {
+    padding: 0px !important;
+}
+
+.taikenkisec1 .wp-block-column em {
+    float: right;
+    display: block;
+    font-style: normal;
+}
+
+.taikenkisec1 .wp-block-group__inner-container em {
+    float: right;
+    display: block;
+    font-style: normal;
+}
+
+.taikenkisec1 h3 {
+    background-color: #f0f8f7;
+    color: #009380;
+}
+
+/* ---------- 入塾の流れ・受講料 ----------*/
+body.page-id-19 .wp-block-columns {
+    --wp-column-gap: 0.5rem;
+}
+
+.gakuhibox1 .vk_borderBox .vk_borderBox_body {
+    padding: 0px !important;
+    border: 0px !important;
+}
+
+.vk_borderBox .vk_borderBox_title_container {
+    padding: 0.5em 1em 0.4em !important;
+}
+
+.gakuhibox1 .vk_borderBox .vk_borderBox_title_container .vk_borderBox_title {
+    font-weight: normal !important;
+}
+
+@media (min-width: 768px) {
+    .timeline1 {
+        margin-top: -280px;
+    }
+    .timeline2 {
+        margin-top: -100px;
+    }
+}
+/* ---------- 指導システム ----------*/
+.systemsec1 .smb-section__background-text__text {
+    text-align: center;
+    border-bottom: 1px solid #009380;
+    padding: 10px 10px 0px;
+    width: 240px;
+    margin: auto;
+}
+
+.systemsec1 h4 {
+    font-size: 1.1rem;
+    color: #009380;
+    font-weight: 500;
+}
+
+#main_content .systemsec1 h2 {
+    margin: 0px;
+    font-weight: bold !important;
+}
+
+.systemsec1 .smb-section__subtitle {
+    font-size: 1.2rem;
+    line-height: 100%;
+    font-weight: normal;
+}
+
+.systemsec1 .po1 {
+    font-size: 0.2rem;
+    line-height: 100%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.systemsec1 .po2 {
+    font-size: 2.6rem;
+    line-height: 100%;
+}
+
+.sysfnt1 {
+    /*    font-size: 0.9rem;*/
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    /*    .system_col1 {
+      margin-top: -50px;
+      position: relative;
+      z-index: 1000;
+  }*/
+}
+/* ---------- 会社概要 ----------*/
+.tbl1 th,
+.tbl1 td {
+    padding: 20px !important;
+}
+
+/* ---------- プライバシーポリシー ----------*/
+.privacybox1 .c-row > .c-row__col {
+    padding-right: 0;
+}
+
+.privacytable1 th {
+    width: 25%;
+}
+
+@media (min-width: 640px) {
+    .privacybox1 .c-row__col--md-1-4,
+    .privacybox1 .c-row__col--md-2-8,
+    .privacybox1 .c-row__col--md-3-12 {
+        --_item-width: 14% !important;
+    }
+}
+/* ---------- お問い合わせ・資料請求 ----------*/
+body.page-id-21 #main_content h2 {
+    font-size: 2rem !important;
+}
+
+body.page-id-21 .smb-section__contents-wrapper > * + * {
+    margin-top: 0;
+}
+
+.yubin1 input.wpcf7-form-control.wpcf7-text {
+    width: 100px !important;
+    margin-right: 5px;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    text-align: center !important;
+}
+
+.smb-section__lede {
+    font-size: 1rem;
+}
+
+.wpcf7-spinner {
+    display: block;
+    margin: auto;
+}
+
+/* ---------- ブログ ----------*/
+.p-entry__head h1 {
+    font-size: 2.2rem !important;
+    font-weight: normal;
+    color: #009380 !important;
+}
+
+.p-entry__head .c-postMetas {
+    color: #009380 !important;
+    display: none;
+}
+
+/* ---------- フッター ----------*/
+#footer .u-flex--c li {
+    border-right: 1px solid #fff;
+    margin-top: 8px;
+    &:last-child {
+        border-right: none;
+    }
+    @include mq(sm) {
+        border-right: none;
+        width: 50%;
+    }
+}
+
+.c-copyright {
+    font-size: 0.8rem;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#footer .u-flex--c {
+    -webkit-box-pack: left;
+    -webkit-justify-content: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+    @include mq(sm) {
+        justify-content: end;
+    }
+}
+
+.i_footer_b1 a {
+    color: #333 !important;
+}
+
+@media (min-width: 981px) {
+    /*#footer .l-container {
+      width: 980px;
+  }*/
+    .i_footer_b1 {
+        margin: auto;
+        width: 868px;
+        padding: 5px 0;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+}
+@media (max-width: 767px) {
+    .i_footer_b1 {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: calc(var(--ark-width--container) + var(--ark-padding--container) * 2);
+        padding-left: var(--ark-padding--container);
+        padding-right: var(--ark-padding--container);
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 0.6rem !important;
+    }
+}
+/* ---------- Cブロック ---------- */
+/*
+.block1 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 30px;
+}
+
+.block1_left {
+    width: 60px;
+    height: 60px;
+    background-color: #009380;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+        padding-top: 12px;
+}
+
+.block1_1 {
+    font-size: 0.8rem;
+    line-height: 100%;
+}
+
+.block1_2 {
+    font-size: 1.4rem;
+    line-height: 140%;
+}
+
+.block1_right {
+    border: 1px solid #009380;
+    width: 94%;
+    padding-left: 10px;
+        padding-top: 10px;
+        height: 60px;
+        margin-left: 5px;
+}
+
+.block1_3 {
+    font-size: 0.8rem;
+    line-height: 100%;
+}
+
+.block1_4 {
+    font-size: 1.4rem;
+    line-height: 140%;
+    color: #009380;
+}
+*/
+.block1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 0 30px;
+}
+
+.block1_left {
+    width: 60px;
+    height: 60px;
+    background-color: #009380;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    padding-top: 12px;
+}
+
+.block1_1 {
+    font-size: 0.8rem;
+    line-height: 100%;
+}
+
+.block1_2 {
+    font-size: 1.4rem;
+    line-height: 140%;
+}
+
+.block1_right {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border: 1px solid #009380;
+    width: 94%;
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 60px;
+    margin-left: 5px;
+    background-color: #fff;
+}
+
+.block1_3 {
+    font-size: 0.8rem;
+    line-height: 100%;
+}
+
+.block1_4 {
+    font-size: 1.4rem;
+    line-height: 140%;
+    color: #009380;
+}
+
+/* 追記 headingbox*/
+.block1__main {
+    font-size: 1.7rem;
+    color: #009380;
+    line-height: 140%;
+}
+
+/* sp */
+@media (max-width: 681px) {
+    .block1__main {
+        font-size: 1.2rem;
+        line-height: 115%;
+        color: #009380;
+    }
+}
+/* ---------- パーツ ----------*/
+.p_d1 {
+    margin-bottom: 15px !important;
+}
+
+.p_f1 {
+    font-size: 0.8rem;
+}
+
+.fnt1 {
+    display: inline-block;
+    border: 1px solid #009380;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 30px;
+    color: #009380;
+}
+
+h3.fnt2 {
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+}
+
+.fnt3 {
+    font-weight: 600 !important;
+}
+
+.fntc1 {
+    color: #c1a263;
+}
+
+.down1 {
+    padding-bottom: 10px;
+}
+
+.fntsize1 {
+    font-size: 1.2rem;
+}
+
+/* ---------- ブロック ----------*/
+.wp-block-columns {
+    margin-bottom: 0em;
+}
+
+.cool-vertical-timeline-body * {
+    width: 100%;
+}
+
+.wp-block-column > *,
+.wp-block-cover__inner-container > *,
+.wp-block-group__inner-container > *,
+.wp-block-media-text__content > * {
+    margin-top: 0px !important;
+}
+
+[id^="bfb_content_"].bfb_view_pc a.bfb_btn {
+    border-bottom: solid 0px #eb7d9c !important;
+    background: #eb7d9c !important;
+    text-shadow: 0 0px 0 #003903 !important;
+    color: #fff !important;
+}
+
+[id^="bfb_content_"].bfb_view_pc a.bfb_btn {
+    border-bottom: solid 0px #eb7d9c !important;
+    background: #eb7d9c !important;
+    text-shadow: 0 0px 0 #003903 !important;
+    color: #fff !important;
+}
+
+[id^="bfb_content_"].bfb_view_sp a.bfb_btn {
+    border-bottom: solid 0px #eb7d9c !important;
+    background: #eb7d9c !important;
+    text-shadow: 0 0px 0 #003903 !important;
+    color: #fff !important;
+}
+
+[id^="bfb_content_"].bfb_view_sp a.bfb_btn2 {
+    border-bottom: solid 0px #eb7d9c !important;
+    background: #eb7d9c !important;
+    text-shadow: 0 0px 0 #003903 !important;
+    color: #fff !important;
+    -webkit-animation: flash 2s linear infinite;
+    animation: flash 2s linear infinite;
+}
+
+@media (min-width: 681px) {
+    .vk_balloon_icon_image {
+        width: 100px !important;
+        height: 100px !important;
+    }
+}
+@media (max-width: 680px) {
+    .smb-section__inner > .c-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .vk_button.vk_button-align-wide,
+    .editor-styles-wrapper .vk_button.vk_button-align-wide {
+        max-width: 100% !important;
+    }
+    .smb-section__contents-wrapper > * + * {
+        margin-top: 10px;
+    }
+    .wp-block-snow-monkey-blocks-container.smb-container.c-container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+        padding: 20px 0px;
+    }
+    table th {
+        display: block;
+        width: 100% !important;
+        background-color: #f9f9f9;
+    }
+    table td {
+        display: block;
+        width: 100% !important;
+    }
+}
+/* ---------- AD ----------*/
+[id^="bfb_content_"].bfb_view_pc {
+    background-color: rgba(255, 255, 255, 0.9333333333) !important;
+}
+
+[id^="bfb_content_"].bfb_view_pc .bfb_parts_2 .bfb_discText {
+    color: #222 !important;
+}
+
+[id^="bfb_content_"] .bfb_closed {
+    display: none !important;
+}
+
+[id^="bfb_content_"].bfb_view_sp {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* --- 点滅 --- */
+.bfb_btn {
+    -webkit-animation: flash 2s linear infinite;
+    animation: flash 2s linear infinite;
+    background: #0091ea;
+    margin: 20px;
+}
+
+@-webkit-keyframes flash {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes flash {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+/* ---------- SLIDER ----------*/
+#mainky {
+    width: 80%;
+    margin: auto;
+    margin-top: 20%;
+}
+
+#mainky h2 {
+    margin: 0 auto 20px !important;
+    color: #000 !important;
+    padding: 0.5em 0.5em 0.6em 0.5em !important;
+    line-height: 1.3 !important;
+    background: transparent !important;
+    vertical-align: bottom !important;
+    border-radius: 0px !important;
+    font-size: 30px !important;
+    text-shadow:
+        2px 2px 0 #fff,
+        -2px -2px 0 #fff,
+        -2px 2px 0 #fff,
+        2px -2px 0 #fff,
+        0px 2px 0 #fff,
+        0 -2px 0 #fff,
+        -2px 0 0 #fff,
+        2px 0 0 #fff;
+    text-align: center;
+}
+
+#mainky h2:before {
+    content: "" !important;
+    color: transparent !important;
+    margin-right: 0px !important;
+}
+
+#mainky h2 strong {
+    color: #ff0000;
+    font-size: 36px !important;
+}
+
+.mainky_1 {
+    text-align: center;
+    color: #000;
+    font-size: 18px !important;
+    text-shadow:
+        1px 1px 0 #fff,
+        -1px -1px 0 #fff,
+        -1px 1px 0 #fff,
+        1px -1px 0 #fff,
+        0px 1px 0 #fff,
+        0 -1px 0 #fff,
+        -1px 0 0 #fff,
+        1px 0 0 #fff;
+}
+
+@media (max-width: 680px) {
+    #mainky {
+        width: 100%;
+        margin: auto;
+        margin-top: 5%;
+    }
+    #mainky h2 {
+        font-size: 14px !important;
+    }
+    #mainky h2 strong {
+        color: #ff0000;
+        font-size: 18px !important;
+    }
+    .mainky_1 {
+        text-align: center;
+        font-size: 12px !important;
+    }
+    .xo-slider-template-default .slide-content {
+        padding: 10px !important;
+    }
+}
+/* --- SLIDER スマホ表示 */
+.xo-slider-template-default .swiper-slide img {
+    min-height: 380px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+/* ------------ コンテンツ ------------ */
+#main_content h2.p-comments__title,
+#main_content .c-bottomSection__title {
+    font-size: 1.2rem !important;
+    background-color: #f9f9f9;
+    padding: 5px 10px;
+}
+
+.jisseki2,
+.jisseki3 {
+    font-size: 0.8rem;
+}
+
+/* ------------ サイド ------------ */
+#sidebar h2 {
+    font-size: 1.1rem !important;
+    background-color: #009380;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+@media (min-width: 1000px) {
+    .l-sidebar {
+        background-color: #f9f9f9;
+        padding: 10px;
+    }
+}
+/*.wp-block-latest-posts:not(.is-grid) {
+    border-bottom:0;
+    border-top:0;
+}
+ul.wp-block-latest-posts__list,ul.wp-block-archives-list,.wp-block-categories-list{
+    margin: 0px 15px !important;
+}
+.c-widget+.c-widget {
+    margin-top: 2rem;
+}
+
+@media (min-width: 1000px) {
+    [data-sidebar="on"] .l-sidebar {
+        border: 1px solid #179D8B;
+    }
+}*/

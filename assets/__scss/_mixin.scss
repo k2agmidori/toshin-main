@@ -1,0 +1,87 @@
+// mixin
+$breakpoints: (
+    "sm": "screen and (max-width: 400px)",
+    "md": "screen and (max-width: 768px)",
+    "lg": "screen and (max-width: 1000px)",
+    "xl": "screen and (max-width: 1200px)"
+) !default;
+
+@mixin mq($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+//------------------------------------------
+// Media Query用
+//------------------------------------------
+
+// mobileのみ
+@mixin mobile {
+	// 600px未満
+	@media not all and (min-width: 600px) {
+		@content;
+	}
+}
+
+//tab以上
+@mixin tab {
+	@media (min-width: 600px) {
+		@content;
+	}
+}
+
+@mixin sp {
+	// 1000px未満
+	@media not all and (min-width: 1000px) {
+		@content;
+	}
+}
+
+//pc以上
+@mixin pc {
+	@media (min-width: 1000px) {
+		@content;
+	}
+}
+
+@mixin wide {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+
+//任意の数値
+@mixin max-width($break-point) {
+	@media (max-width: $break-point) {
+		@content;
+	}
+}
+@mixin min-width($break-point) {
+	@media (min-width: $break-point) {
+		@content;
+	}
+}
+
+// フォントの色指定
+// $toshin: #009380;
+$toshin: #08a597;
+$pale-toshin: #08a597;
+$pale2-toshin: #5accb7;
+$gd-toshin: linear-gradient(to right, #009380, #30b4a2);
+
+$red: #dc5e61;
+$orange: #ef8532;
+$pale-orange:#f79f5c;
+$d-orange: #d37126;
+$gd-orange: linear-gradient(-90deg, rgb(247, 171, 7), rgba(248, 134, 57, 1) 47%, rgba(255, 123, 34, 1));
+$gray: #f7f7f7;
+
+$w:#fff;
+
+// 白透過
+$wt: #ffffffc9;
+
+$d-gray:#494949;
+
+

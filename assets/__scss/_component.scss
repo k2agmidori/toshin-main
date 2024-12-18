@@ -1,0 +1,98 @@
+@use "mixin" as *;
+
+/* component */
+
+/* トップへ戻るボタン */
+.pagetop {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 12%;
+    right: 2%;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+    /* デフォルトでは表示を消す */
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10000;
+}
+
+.pagetop__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #c5a972;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    &:hover {
+        opacity: 0.7;
+        transition: 0.4s;
+    }
+    &:active {
+        opacity: 0.7;
+        transition: 0.4s;
+    }
+}
+
+.pagetop__text {
+    padding-top: 15px;
+    position: relative;
+}
+
+.pagetop__text::before {
+    content: "〈";
+    display: inline-block;
+    position: absolute;
+    font-size: 1rem;
+    top: -13px;
+    left: 48%;
+    transform: translateX(-50%) rotate(90deg);
+}
+
+.pagetop__text::after {
+    content: "〈";
+    display: inline-block;
+    position: absolute;
+    font-size: 1rem;
+    top: -7px;
+    left: 48%;
+    transform: translateX(-50%) rotate(90deg);
+}
+
+/* TOPボタン出現後のスタイル */
+.pagetop.fadeIn {
+    opacity: 1; /* フェードインアニメーション */
+    visibility: visible; /* ボタンを表示 */
+}
+
+/*
+* 申し込みボタン lazyblock
+*/
+.request_btn a {
+    padding: 0.8em 1.5rem !important;
+    @include mq(md) {
+        font-size: 1.1rem !important;
+    }
+}
+
+// フォントふち装飾
+.fuchi-font {
+    text-shadow:
+        1.3px 1.3px 0 #fff,
+        -1.3px -1.3px 0 #fff,
+        -1.3px 1.3px 0 #fff,
+        1.3px -1.3px 0 #fff,
+        0px 1.3px 0 #fff,
+        0-1.3px 0 #fff,
+        -1.3px 0 0 #fff,
+        1.3px 0 0 #fff;
+}
+
